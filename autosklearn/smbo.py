@@ -207,6 +207,7 @@ class AutoMLSMBO(object):
                  seed=1,
                  metadata_directory=None,
                  resampling_strategy='holdout',
+                 iterative: bool = True,
                  resampling_strategy_args=None,
                  include_estimators=None,
                  exclude_estimators=None,
@@ -232,6 +233,7 @@ class AutoMLSMBO(object):
 
         # Evaluation
         self.resampling_strategy = resampling_strategy
+        self.iterative = iterative
         if resampling_strategy_args is None:
             resampling_strategy_args = {}
         self.resampling_strategy_args = resampling_strategy_args
@@ -421,6 +423,7 @@ class AutoMLSMBO(object):
             backend=backend_copy,
             autosklearn_seed=seed,
             resampling_strategy=self.resampling_strategy,
+            iterative=self.iterative,
             initial_num_run=num_run,
             logger=self.logger,
             include=include,

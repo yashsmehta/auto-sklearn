@@ -94,6 +94,7 @@ class EvaluationTest(unittest.TestCase):
                                     metric=accuracy,
                                     cost_for_crash=get_cost_of_crash(accuracy),
                                     abort_on_first_run_crash=False,
+                                    iterative=False,
                                     )
         info = ta.run_wrapper(RunInfo(config=config, cutoff=30, instance=None,
                                       instance_specific=None, seed=1, capped=False))
@@ -113,6 +114,7 @@ class EvaluationTest(unittest.TestCase):
                                     metric=accuracy,
                                     cost_for_crash=get_cost_of_crash(accuracy),
                                     abort_on_first_run_crash=False,
+                                    iterative=False,
                                     )
         self.scenario.wallclock_limit = 5
         self.stats.submitted_ta_runs += 1
@@ -131,6 +133,7 @@ class EvaluationTest(unittest.TestCase):
                                     metric=accuracy,
                                     cost_for_crash=get_cost_of_crash(accuracy),
                                     abort_on_first_run_crash=False,
+                                    iterative=False,
                                     )
         self.stats.ta_runs = 1
         ta.run_wrapper(RunInfo(config=config, cutoff=30, instance=None, instance_specific=None,
@@ -151,6 +154,7 @@ class EvaluationTest(unittest.TestCase):
                                     metric=accuracy,
                                     cost_for_crash=get_cost_of_crash(accuracy),
                                     abort_on_first_run_crash=False,
+                                    iterative=False,
                                     )
 
         # The following should not fail because abort on first config crashed is false
@@ -186,6 +190,7 @@ class EvaluationTest(unittest.TestCase):
                                     metric=log_loss,
                                     cost_for_crash=get_cost_of_crash(log_loss),
                                     abort_on_first_run_crash=False,
+                                    iterative=False,
                                     )
         info = ta.run_wrapper(RunInfo(config=config, cutoff=30, instance=None,
                                       instance_specific=None, seed=1, capped=False))
@@ -215,6 +220,7 @@ class EvaluationTest(unittest.TestCase):
                                     metric=accuracy,
                                     cost_for_crash=get_cost_of_crash(accuracy),
                                     abort_on_first_run_crash=False,
+                                    iterative=False,
                                     )
         info = ta.run_wrapper(RunInfo(config=config, cutoff=30, instance=None,
                                       instance_specific=None, seed=1, capped=False))
@@ -249,6 +255,7 @@ class EvaluationTest(unittest.TestCase):
                                     metric=accuracy,
                                     cost_for_crash=get_cost_of_crash(accuracy),
                                     abort_on_first_run_crash=False,
+                                    iterative=False,
                                     )
         info = ta.run_wrapper(RunInfo(config=config, cutoff=30, instance=None,
                                       instance_specific=None, seed=1, capped=False))
@@ -271,6 +278,7 @@ class EvaluationTest(unittest.TestCase):
                                     metric=accuracy,
                                     cost_for_crash=get_cost_of_crash(accuracy),
                                     abort_on_first_run_crash=False,
+                                    iterative=False,
                                     )
         info = ta.run_wrapper(RunInfo(config=config, cutoff=30, instance=None,
                                       instance_specific=None, seed=1, capped=False))
@@ -297,6 +305,7 @@ class EvaluationTest(unittest.TestCase):
                                     metric=accuracy,
                                     cost_for_crash=get_cost_of_crash(accuracy),
                                     abort_on_first_run_crash=False,
+                                    iterative=False,
                                     )
         self.scenario.wallclock_limit = 180
         instance = "{'subsample': 30}"
@@ -321,6 +330,7 @@ class EvaluationTest(unittest.TestCase):
                                     metric=accuracy,
                                     cost_for_crash=get_cost_of_crash(accuracy),
                                     abort_on_first_run_crash=False,
+                                    iterative=False,
                                     )
         self.stats.submitted_ta_runs += 1
         info = ta.run_wrapper(RunInfo(config=config, cutoff=30, instance=None,
